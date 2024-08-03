@@ -1,8 +1,8 @@
-export const imagesTask = () => {
+export const imagesTask = (done) => {
     const { plugins, production, paths } = global.app
 
-    const result = plugins.gulp.src(paths.images.src)
-        .pipe(plugins.gulpif(!production, plugins.newer(paths.images.app)))
+    const result = plugins.gulp.src([`${paths.images.src}/**/**.{jpg,jpeg,png,svg}`, ...paths.images.srcExceptions], { encoding: false })
+        .pipe(plugins.newer(paths.images.app))
         .pipe(plugins.gulpif(production, plugins.imagemin([
             plugins.imageminGiflossy({
                 optimizationLevel: 3,
@@ -33,10 +33,11 @@ export const imagesTask = () => {
                 ],
             }),
         ])))
-        .pipe(plugins.gulp.dest(paths.images.app))
+        .pipe(plugins.gulp.dest(`${paths.images.app}/`))
         .pipe(plugins.debug({
             title: 'Images',
         }))
-        .pipe(plugins.browsersync.stream());
+        .pipe(plugins.browsersync.stream())
+        done()
     return result;
 };

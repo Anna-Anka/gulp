@@ -53,20 +53,10 @@ const paths = {
         watch: './src/js/**/*.js',
     },
     images: {
-        src: [
-            './src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}',
-            '!./src/img/favicon/*',
-        ],
-        app: './app/img/',
-        watch: './src/img/**/*.{jpg,jpeg,png,gif,svg,tiff}',
-    },
-    avifWebp: {
-        src: [
-            './src/img/**/*.{jpg,jpeg,png,gif,tiff}',
-            '!./src/img/favicon/*',
-        ],
-        app: './app/img/',
-        watch: './src/img/**/*.{jpg,jpeg,png,gif,tiff}',
+        src: './src/img',
+        app: './app/img',
+        watch: './src/img/',
+        srcExceptions: ['!./src/img/favicon/**/*', '!./src/img/icons/**/*', '!./src/img/sprites/**/*']
     },
     sprites: {
         src: './src/img/sprites/*.svg',
@@ -80,7 +70,7 @@ const paths = {
     },
     favicons: {
         src: './src/img/favicon/favicon.png',
-        app: './app/img/favicons/',
+        app: './app/img/favicon/',
     },
     devFolder: './src',
     productFolder: './app',
@@ -89,7 +79,7 @@ const paths = {
 
 global.app = {
     production: process.argv.includes('--production'),
-    normal: process.argv.includes('--normal'),
+    dev: process.argv.includes('--dev'),
     paths,
     plugins
 }

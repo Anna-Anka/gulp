@@ -1,13 +1,17 @@
-export const avifTask = () => {
-    const {plugins, production, paths} = global.app
-    
-    plugins.gulpif(production, plugins.deleteAsync([`${paths.avifWebp.app}/*.avif`]));
-    return plugins.gulp.src(paths.avifWebp.src)
-        .pipe(plugins.gulpif(!production, plugins.newer(paths.avifWebp.app)))
-        .pipe(plugins.avif(plugins.gulpif(production, { quality: 50 })))
-        .pipe(plugins.gulp.dest(paths.avifWebp.app))
+export const avifTask = (done) => {
+    const { plugins, paths } = global.app
+
+    return plugins.gulp.src([`${paths.images.src}/**/**.{jpg,jpeg,png}`,
+    ...paths.images.srcExceptions
+    ], { encoding: false })
+        .pipe(plugins.newer(paths.images.app))
+        .pipe(plugins.avif({ quality: 50 }))
+        .pipe(plugins.gulp.dest(paths.images.app))
         .pipe(plugins.debug({
             title: 'Images',
         }))
-        .on('end', plugins.browsersync.reload);
+        .on('end', () => {
+            plugins.browsersync.reload();
+            done(); 
+        });
 };
