@@ -16,7 +16,9 @@ const serveTask = () => {
     const { plugins, paths } = global.app
 
     plugins.browsersync.init({
-        server: `${paths.productFolder}/`,
+        server: {
+            baseDir: `${paths.productFolder}/`
+        },
         host: '192.168.1.1',
         port: 3000,
         notify: true,

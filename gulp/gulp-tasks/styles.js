@@ -1,9 +1,13 @@
-export const stylesTask = () => {
-    const { plugins, production, paths, normal } = global.app
+export const stylesTask = async () => {
+    const { plugins, production, paths } = global.app
     const sass = plugins.gulpsass(plugins.dartsass);
+
+    if (production) {
+        await plugins.deleteAsync([paths.styles.app]);
+    }
     
-    plugins.gulpif(production || normal, plugins.deleteAsync([paths.styles.app]));
     return plugins.gulp.src(paths.styles.src)
+        .pipe(plugins.gulpif(!production, plugins.sourcemaps.init()))
         .pipe(plugins.plumber(
             plugins.notify.onError({
                 title: 'SCSS',
@@ -17,7 +21,7 @@ export const stylesTask = () => {
             grid: true,
             overrideBrowserslist: ['last 5 versions'],
         }))
-        .pipe(plugins.gulpif(!normal, plugins.mincss({
+        .pipe(plugins.gulpif(production, plugins.mincss({
             compatibility: 'ie8',
             level: {
                 1: {
@@ -36,10 +40,12 @@ export const stylesTask = () => {
             },
         })))
         .pipe(plugins.plumber.stop())
-        .pipe(plugins.gulpif(normal, plugins.sourcemaps.write('./maps/')))
+        .pipe(plugins.gulpif(!production, plugins.sourcemaps.write('.')))
+
         .pipe(plugins.gulp.dest(paths.styles.app))
         .pipe(plugins.debug({
             title: 'CSS files',
         }))
-        .on('end', plugins.browsersync.reload);
+        .on('end', plugins.browsersync.reload)
+        .pipe(plugins.browsersync.stream());
 };
