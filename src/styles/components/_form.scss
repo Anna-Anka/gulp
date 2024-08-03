@@ -1,0 +1,50 @@
+.form {
+	&__item {
+		width: 100%;
+		max-width: 400px;
+
+		&:not(:last-child) {
+			margin-bottom: 20px;
+		}
+	}
+
+	&__password {
+		position: relative;
+		width: 100%;
+	}
+
+	&__field {
+		width: 100%;
+		border: 1px solid grey;
+	}
+
+	&__show {
+		position: absolute;
+		top: 50%;
+		right: 10px;
+		width: 24px;
+		height: 24px;
+		background-image: url('../img/icons/eye.svg');
+		transform: translateY(-50%);
+		@include bg-contain;
+
+		&::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 2px;
+			background-color: grey;
+			transform: rotate(45deg);
+			opacity: 0;
+			transition: opacity 0.3s;
+			content: '';
+		}
+
+		&--active {
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+}

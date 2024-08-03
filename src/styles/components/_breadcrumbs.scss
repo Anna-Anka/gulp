@@ -1,0 +1,39 @@
+.breadcrumbs {
+	padding-top: 40px;
+	padding-bottom: 17px;
+
+	&__items {
+		display: flex;
+		align-items: center;
+		padding-bottom: 8px;
+		overflow-x: auto;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			position: relative;
+			margin-right: 4px;
+			padding-right: 28px;
+
+			&::before {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				width: 10px;
+				height: 20px;
+				background-image: url('../img/icons/arrow.svg');
+				transform: translateY(-50%);
+				content: '';
+				@include bg-contain;
+			}
+		}
+	}
+
+	&__link {
+		white-space: nowrap;
+
+		&--current {
+			pointer-events: none;
+		}
+	}
+}

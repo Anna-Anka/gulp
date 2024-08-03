@@ -1,0 +1,28 @@
+<div class="@class">
+    <div class="container">
+        <ul class="breadcrumbs__items">
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="index.html">Главная</a>
+            </li>
+
+            @if(context.count === '2') {
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">@2</a>
+            </li>
+            }
+
+            @if(context.count === '3') {
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">@2</a>
+            </li>
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link" href="#">@3</a>
+            </li>
+            }
+
+            <li class="breadcrumbs__item">
+                <a class="breadcrumbs__link breadcrumbs__link--current" aria-current="page">@current</a>
+            </li>
+        </ul>
+    </div>
+</div>

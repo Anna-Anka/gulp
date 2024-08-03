@@ -1,0 +1,35 @@
+.burger-menu {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	margin-right: 40px;
+
+	@include mq(lg) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		max-width: 270px;
+		margin-right: 0;
+		padding: 40px 24px;
+		overflow: hidden;
+		background-color: var(--color-white);
+		transform: translateX(100%);
+		visibility: hidden;
+		transition: transform 0.5s;
+		@include flex-column-v-start;
+	}
+
+	&--active {
+		@include mq(lg) {
+			right: 0;
+			z-index: 50;
+			height: 100vh;
+			overflow-y: auto;
+			transform: translateX(0);
+			visibility: visible;
+			opacity: 1;
+			transition: transform 0.3s ease-in-out;
+		}
+	}
+}
