@@ -1,16 +1,5 @@
-import { plugins } from './gulp/plugins.js'
-import { avifTask } from './gulp/gulp-tasks/avif.js'
-import { cleanTask } from './gulp/gulp-tasks/clean.js'
-import { deployTask } from './gulp/gulp-tasks/deploy.js'
-import { faviconsTask } from './gulp/gulp-tasks/favicons.js'
-import { fontsTask} from './gulp/gulp-tasks/fonts.js'
-import { imagesTask } from './gulp/gulp-tasks/images.js'
-import { scriptsTask } from './gulp/gulp-tasks/scripts.js'
-import { spritesTask } from './gulp/gulp-tasks/sprites.js'
-import { stylesTask } from './gulp/gulp-tasks/styles.js'
-import { viewsTask } from './gulp/gulp-tasks/views.js'
-import { webpTask } from './gulp/gulp-tasks/webp.js'
-import { zipTask } from './gulp/gulp-tasks/zip.js'
+import {plugins} from './gulp/config.js'
+import { avifTask, cleanTask, deployTask, faviconsTask, fontsTask, imagesTask, scriptsTask, spritesTask, stylesTask, viewsTask, webpTask, zipTask } from './gulp/tasks/index.js'
 
 const serveTask = () => {
     const { plugins, paths } = global.app

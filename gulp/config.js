@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import debug from 'gulp-debug';
 import { deleteAsync } from 'del';
-import imagemin, {svgo} from 'gulp-imagemin';
+import imagemin, { svgo } from 'gulp-imagemin';
 import imageminPngquant from 'imagemin-pngquant';
 import imageminZopfli from 'imagemin-zopfli';
 import imageminMozjpeg from 'imagemin-mozjpeg';
@@ -31,12 +31,11 @@ import favicons from 'gulp-real-favicon';
 import deploy from 'gh-pages';
 import filter from 'gulp-filter';
 
-// todo: не нравится экспорт
 export const plugins = {
     gulp, favicons, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter,
 };
 
-const paths = {
+export const paths = {
     html: {
         src: './src/html/*.html',
         app: './app/',
