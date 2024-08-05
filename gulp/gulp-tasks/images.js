@@ -2,7 +2,7 @@ export const imagesTask = (done) => {
     const { plugins, production, paths } = global.app
 
     const result = plugins.gulp.src([`${paths.images.src}/**/**.{jpg,jpeg,png,svg}`, ...paths.images.srcExceptions], { encoding: false })
-        .pipe(plugins.newer(paths.images.app))
+        .pipe(plugins.gulpif(!production, plugins.newer(paths.images.app)))
         .pipe(plugins.gulpif(production, plugins.imagemin([
             plugins.imageminGiflossy({
                 optimizationLevel: 3,

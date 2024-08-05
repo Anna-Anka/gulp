@@ -64,7 +64,7 @@ const paths = {
         watch: './src/img/sprites/*.svg',
     },
     fonts: {
-        src: './src/fonts/**/*',
+        src: './src/fonts',
         app: './app/fonts/',
         watch: './src/fonts/**/*',
     },
