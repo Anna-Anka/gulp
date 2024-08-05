@@ -1,7 +1,7 @@
 .burger-button {
-	$burger-width: 30px;
-	$burger-height: 30px;
-	$burger-line-height: 2px;
+	--burger-width: 30px;
+	--burger-height: 30px;
+	--burger-line-height: 2px;
 
 	position: relative;
 	width: $burger-width;
@@ -15,7 +15,9 @@
 		width: 100%;
 		height: $burger-line-height;
 		background-color: currentColor;
-		transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+		transition:
+			transform 0.3s ease-in-out,
+			top 0.3s ease-in-out;
 		content: '';
 	}
 
@@ -46,7 +48,9 @@
 		&::before,
 		&::after {
 			top: 50%;
-			transition: transform 0.3s ease-in-out, top 0.3s ease-in-out;
+			transition:
+				transform 0.3s ease-in-out,
+				top 0.3s ease-in-out;
 		}
 
 		&::before {

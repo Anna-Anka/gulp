@@ -41,4 +41,6 @@ export const buildImages = plugins.gulp.series(imagesTask, webpTask, avifTask);
 
 export const fonts = plugins.gulp.series(fontsTask);
 
+export const zip = plugins.gulp.series(zipTask);
+
 export default development;

@@ -22,10 +22,6 @@
 // import { headerSticky } from "./templates/header-sticky";
 // headerSticky();
 
-// * smooth-scroll (плавный скрол)
-// import { smoothScroll } from "./templates/smooth-scroll";
-// smoothScroll();
-
 // * type (печатающийся текст)
 //import { type } from './templates/type';
 // type();

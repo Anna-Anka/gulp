@@ -15,7 +15,6 @@ export default {
                 vendor: {
                     test: /node_modules/,
                     chunks: 'initial',
-                    // name: 'vendor',
                     name: 'main',
                     enforce: true,
                 },
