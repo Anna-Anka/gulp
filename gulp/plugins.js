@@ -21,7 +21,7 @@ import sourcemaps from 'gulp-sourcemaps';
 import plumber from 'gulp-plumber';
 import include from 'gulp-file-include';
 import webp from 'gulp-webp';
-import fonter from 'gulp-fonter';
+import ttf2woff from 'gulp-ttf2woff';
 import ttf2woff2 from 'gulp-ttf2woff2';
 import path from 'path';
 import notify from 'gulp-notify';
@@ -33,7 +33,7 @@ import filter from 'gulp-filter';
 
 // todo: не нравится экспорт
 export const plugins = {
-    gulp, favicons, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, fonter, ttf2woff2, path, notify, zip, avif, deploy, filter,
+    gulp, favicons, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter,
 };
 
 const paths = {
@@ -64,7 +64,7 @@ const paths = {
         watch: './src/img/sprites/*.svg',
     },
     fonts: {
-        src: './src/fonts',
+        src: './src/fonts/**/*',
         app: './app/fonts/',
         watch: './src/fonts/**/*',
     },
