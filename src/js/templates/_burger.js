@@ -1,5 +1,5 @@
-import { disableScroll } from '../utils/_disable-scroll';
-import { enableScroll } from '../utils/_enable-scroll';
+import { disableScroll } from '../utils/_disable-scroll.js';
+import { enableScroll } from '../utils/_enable-scroll.js';
 
 export const burger = () => {
     const burgerButton = document.querySelector('[data-burger-button]');
@@ -19,6 +19,12 @@ export const burger = () => {
         }
     };
 
+    const hideBurger = () => {
+        burgerButton.classList.remove('burger-button--active');
+        menu.classList.remove('burger-menu--active');
+        overlay.classList.remove('overlay--active');
+    }
+
     burgerButton.addEventListener('click', () => {
         burgerButton.classList.toggle('burger-button--active');
         menu.classList.toggle('burger-menu--active');
@@ -27,17 +33,13 @@ export const burger = () => {
     });
 
     overlay.addEventListener('click', () => {
-        burgerButton.classList.remove('burger-button--active');
-        menu.classList.remove('burger-menu--active');
-        overlay.classList.remove('overlay--active');
+        hideBurger();
         checkClass();
     });
 
-    menuLinks.forEach((el) => {
-        el.addEventListener('click', () => {
-            burgerButton.classList.remove('burgerbutton-button--active');
-            menu.classList.remove('burgerbutton-menu--active');
-            overlay.classList.remove('overlay--active');
+    menuLinks.forEach((link) => {
+        link.addEventListener('click', () => {
+            hideBurger();
             enableScroll();
         });
     });

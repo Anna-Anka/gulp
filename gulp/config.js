@@ -55,7 +55,7 @@ export const paths = {
         src: './src/img',
         app: './app/img',
         watch: './src/img/',
-        srcExceptions: ['!./src/img/favicon/**/*', '!./src/img/icons/**/*', '!./src/img/sprites/**/*']
+        srcExceptions: ['!./src/img/favicon/**/*', '!./src/img/sprites/**/*']
     },
     sprites: {
         src: './src/img/sprites/*.svg',

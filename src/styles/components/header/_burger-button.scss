@@ -2,23 +2,25 @@
 	--burger-width: 30px;
 	--burger-height: 30px;
 	--burger-line-height: 2px;
+	--burger-border-radius: 0;
+	--burger-color: var(--color-black);
 
 	position: relative;
 	width: $burger-width;
 	height: $burger-height;
-	color: var(--color-black);
+	color: var(--burger-color);
 
 	&::before,
 	&::after {
+		content: '';
 		position: absolute;
 		left: 0;
 		width: 100%;
-		height: $burger-line-height;
-		background-color: currentColor;
+		height: var(--burger-line-height);
+		background-color: currentcolor;
 		transition:
 			transform 0.3s ease-in-out,
 			top 0.3s ease-in-out;
-		content: '';
 	}
 
 	&::before {
@@ -26,7 +28,7 @@
 	}
 
 	&::after {
-		top: calc(100% - $burger-line-height);
+		top: calc(100% - var(--burger-line-height));
 	}
 
 	@include mq(lg, min) {
@@ -35,11 +37,11 @@
 
 	&__line {
 		position: absolute;
-		top: 50%;
 		left: 0;
+		top: 50%;
 		width: 100%;
-		height: $burger-line-height;
-		background-color: currentColor;
+		height: var(--burger-line-height);
+		background-color: currentcolor;
 		transform: translateY(-50%);
 		transition: transform 0.3s ease-in-out;
 	}
