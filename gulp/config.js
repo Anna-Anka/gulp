@@ -27,12 +27,11 @@ import path from 'path';
 import notify from 'gulp-notify';
 import zip from 'gulp-zip';
 import avif from 'gulp-avif';
-import favicons from 'gulp-real-favicon';
 import deploy from 'gh-pages';
 import filter from 'gulp-filter';
 
 export const plugins = {
-    gulp, favicons, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter,
+    gulp, debug, deleteAsync, imagemin, imageminPngquant, svgo, imageminZopfli, imageminMozjpeg, imageminGiflossy, newer, browsersync, webpack, webpackStream, gulpif, svg, gulpsass, dartsass, mincss, groupmedia, autoprefixer, sourcemaps, plumber, include, webp, ttf2woff, ttf2woff2, path, notify, zip, avif, deploy, filter,
 };
 
 export const paths = {
@@ -55,7 +54,7 @@ export const paths = {
         src: './src/img',
         app: './app/img',
         watch: './src/img/',
-        srcExceptions: ['!./src/img/favicon/**/*', '!./src/img/sprites/**/*']
+        srcExceptions: ['!./src/img/sprites/**/*']
     },
     sprites: {
         src: './src/img/sprites/*.svg',
@@ -67,9 +66,8 @@ export const paths = {
         app: './app/fonts/',
         watch: './src/fonts/**/*',
     },
-    favicons: {
-        src: './src/img/favicon/favicon.png',
-        app: './app/img/favicon/',
+    resources: {
+        src: './src/resources/**'
     },
     devFolder: './src',
     productFolder: './app',

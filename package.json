@@ -11,8 +11,8 @@
 		"styles": "gulp styles --production",
 		"zip": "gulp zip",
 		"fonts": "gulp fonts",
-		"favicons": "gulp favicons",
 		"images": "gulp buildImages --production",
+		"resources": "gulp resources",
 		"deploy": "gulp deploy",
 		"start": "serve \"./app\"",
 		"test:html-w3c-validator": "start-server-and-test \"start\" \"http://127.0.0.1:3000\" \"html-w3c-validator\""
@@ -44,7 +44,6 @@
 		"gulp-newer": "1.4.0",
 		"gulp-notify": "4.0.0",
 		"gulp-plumber": "latest",
-		"gulp-real-favicon": "0.3.2",
 		"gulp-sass": "5.1.0",
 		"gulp-sourcemaps": "3.0.0",
 		"gulp-svg-sprite": "latest",

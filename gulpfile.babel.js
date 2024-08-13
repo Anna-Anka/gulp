@@ -1,5 +1,5 @@
 import {plugins} from './gulp/config.js'
-import { avifTask, cleanTask, deployTask, faviconsTask, fontsTask, imagesTask, scriptsTask, spritesTask, stylesTask, viewsTask, webpTask, zipTask } from './gulp/tasks/index.js'
+import { avifTask, cleanTask, deployTask, fontsTask, imagesTask, scriptsTask, spritesTask, stylesTask, viewsTask, webpTask, zipTask, resourcesTask } from './gulp/tasks/index.js'
 
 const serveTask = () => {
     const { plugins, paths } = global.app
@@ -28,13 +28,13 @@ const serveTask = () => {
 
 export const development = plugins.gulp.series(
     cleanTask,
-    plugins.gulp.parallel([viewsTask, stylesTask, scriptsTask, imagesTask, avifTask, webpTask, spritesTask, fontsTask, faviconsTask]),
+    plugins.gulp.parallel([viewsTask, stylesTask, scriptsTask, imagesTask, avifTask, webpTask, spritesTask, fontsTask, resourcesTask]),
     plugins.gulp.parallel(serveTask),
 );
 
 export const build = plugins.gulp.series(
     cleanTask,
-    plugins.gulp.parallel([viewsTask, stylesTask, scriptsTask, imagesTask, avifTask, webpTask, spritesTask, fontsTask, faviconsTask]),
+    plugins.gulp.parallel([viewsTask, stylesTask, scriptsTask, imagesTask, avifTask, webpTask, spritesTask, fontsTask, resourcesTask]),
 );
 
 export const buildImages = plugins.gulp.series(imagesTask, webpTask, avifTask);
@@ -42,5 +42,7 @@ export const buildImages = plugins.gulp.series(imagesTask, webpTask, avifTask);
 export const fonts = plugins.gulp.series(fontsTask);
 
 export const zip = plugins.gulp.series(zipTask);
+
+export const resources = plugins.gulp.series(resourcesTask);
 
 export default development;
