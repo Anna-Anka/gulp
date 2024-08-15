@@ -1,8 +1,9 @@
-@include('./components/include/_head.html', {
+@include('./include/_head.html', {
 'title' : 'Заголовок текщей страницы',
 'description' : 'Описание текщей страницы',
 'keywords' : 'это, ключевые, запросы, текщей страницы',
-'robots' : 'noindex, nofollow'
+'robots' : 'noindex, nofollow',
+'ogImage' : '',
 })
 
 @include('./components/_header.html')
@@ -25,4 +26,4 @@
 </main>
 
 @include('./components/_footer.html')
-@include('./components/include/_bottom.html')
+@include('./include/_bottom.html')
