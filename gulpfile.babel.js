@@ -39,10 +39,11 @@ export const build = plugins.gulp.series(
 
 export const buildImages = plugins.gulp.series(imagesTask, webpTask, avifTask);
 
+export const scripts = plugins.gulp.series(scriptsTask);
+export const styles = plugins.gulp.series(stylesTask);
 export const fonts = plugins.gulp.series(fontsTask);
-
-export const zip = plugins.gulp.series(zipTask);
-
 export const resources = plugins.gulp.series(resourcesTask);
+export const zip = plugins.gulp.series(zipTask);
+export const deploy = plugins.gulp.series(deployTask);
 
 export default development;
