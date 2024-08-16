@@ -1,25 +1,30 @@
-@mixin bg-cover {
-	background-repeat: no-repeat;
+@mixin bg-properties($size: cover) {
 	background-position: center;
-	background-size: cover;
+	background-size: $size;
+	background-repeat: no-repeat;
 }
 
-@mixin bg-contain {
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
+@mixin flex($justify: center, $align: center, $direction: row) {
+	display: flex;
+	flex-direction: $direction;
+	align-items: $align;
+	justify-content: $justify;
 }
 
 @mixin resize-img {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-repeat: no-repeat;
+	inset: 0;
 	background-position: center;
 	background-size: cover;
-	content: '';
+	background-repeat: no-repeat;
+}
+
+@mixin line-clamp($lines) {
+	display: -webkit-box;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $lines;
 }
 
 @mixin image-set($pathToImage) {
