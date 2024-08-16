@@ -1,4 +1,4 @@
-@include('./include/_head.html', {
+@include('./settings/_head.html', {
 'title' : 'Заголовок текщей страницы',
 'description' : 'Описание текщей страницы',
 'keywords' : 'это, ключевые, запросы, текщей страницы',
@@ -6,12 +6,16 @@
 'ogImage' : '',
 })
 
-@include('./components/_header.html')
-<!-- @include('./components/_modals.html') -->
+@include('./components/blocks/_header.html')
+
+<!-- <div class="graph-modal">
+    @include('./components/blocks/modals/_modal.html')
+    @include('./components/blocks/modals/_thank-modal.html')
+</div> -->
 
 <main class="main">
     <div class="container">
-        <p class="text" style="margin-bottom: 40px;">
+        <p class="text">
 			Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. То языкового, агентство не буквоград щеке своих, 
 			проектах несколько прямо семантика на берегу коварных текстами пустился страна всемогущая пунктуация ты ведущими назад, дорогу предложения 
 			грамматики пор? Ручеек возвращайся назад осталось семантика эта она дал речью взгляд себя проектах? Свой бросил дорогу ipsum возвращайся жизни 
@@ -25,5 +29,5 @@
     </div>
 </main>
 
-@include('./components/_footer.html')
-@include('./include/_bottom.html')
+@include('./components/blocks/_footer.html')
+@include('./settings/_bottom.html')
