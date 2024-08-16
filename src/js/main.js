@@ -1,4 +1,6 @@
-import './_include.js';
-import './_project.js';
+// import './includes/libs.js';
+// import './includes/utils.js';
+// import './includes/templates.js';
+// import './includes/project.js';
 
-console.log('bg')
+console.log('gulp')
