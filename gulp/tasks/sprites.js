@@ -3,7 +3,7 @@ export const spritesTask = () => {
     const result = plugins.gulp.src(paths.sprites.src)
         .pipe(plugins.svg({
             shape: {
-                dest: 'intermediate-svg',
+                dest: 'sprites',
             },
             mode: {
                 stack: {
@@ -11,7 +11,7 @@ export const spritesTask = () => {
                 },
             },
         }))
-        .pipe(plugins.gulp.dest(paths.sprites.app))
+        .pipe(plugins.gulp.dest(paths.images.app))
         .pipe(plugins.debug({
             title: 'Sprites',
         }))
