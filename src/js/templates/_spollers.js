@@ -1,5 +1,5 @@
-import { slideUp, _slideDown, _slideToggle } from '../utility/_animation';
-import { dataMediaQueries } from '../utility/_data-media-queries';
+import { slideUp, _slideDown, _slideToggle } from '../utils/_animation.js';
+import { dataMediaQueries } from '../utils/_data-media-queries.js';
 
 export function spollers() {
     const spollersArray = document.querySelectorAll('[data-spollers]');

@@ -1,4 +1,4 @@
-import { uniqArray } from './_uniq-array';
+import { uniqArray } from './_uniq-array.js';
 
 export function dataMediaQueries(array, dataSetValue) {
     const media = Array.from(array).filter((item) => {
