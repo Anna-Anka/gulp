@@ -3,7 +3,7 @@
 		"scope": "html",
 		"prefix": "g-burger-button",
 		"body": [
-			"<button class=\"burger-button\" aria-controls=\"header-burger-menu\" aria-label=\"Открыть меню\" aria-expanded=\"false\" data-burger-button>",
+			"<button class=\"burger-button\" aria-controls=\"header-burger-menu\" aria-label=\"Открыть меню\" aria-expanded=\"false\" aria-controls=\"header-burger-menu\" data-burger-button>",
 			"   <span class=\"burger-button__line\" aria-hidden></span>",
 			"</button>"
 		]
@@ -13,7 +13,7 @@
 		"scope": "html",
 		"prefix": "g-menu",
 		"body": [
-			"<ul class=\"burger-menu\" data-menu>",
+			"<ul class=\"burger-menu\" id=\"header-burger-menu\" data-menu>",
 			"    <li class=\"burger-menu__item\">",
 			"       <a class=\"burger-menu__link\" href=\"#\" data-goto=\"#\" data-goto-header data-menu-link></a>",
 			"   </li>",
@@ -298,5 +298,11 @@
 			"</div>"
 		],
 		"description": "Snippet for select with plugin choices"
+	},
+
+	"array in gulp-file-include": {
+		"scope": "html",
+		"prefix": "g-@for",
+		"body": ["@for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }"]
 	}
 }
