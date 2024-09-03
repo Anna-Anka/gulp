@@ -304,5 +304,11 @@
 		"scope": "html",
 		"prefix": "g-@for",
 		"body": ["@for (var i = 0; i < text.length; i++) { <p> `+text[i]+` </p> }"]
+	},
+
+	"if gulp-file-include": {
+		"scope": "html",
+		"prefix": "g-@if",
+		"body": ["@if(typeof $1 !== 'undefined' && $1) {", "    $2", "}"]
 	}
 }
