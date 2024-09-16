@@ -28,13 +28,15 @@
 				@include bg-properties(contain);
 			}
 		}
+
+		&:last-child {
+			.breadcrumbs__link {
+				pointer-events: none;
+			}
+		}
 	}
 
 	&__link {
 		white-space: nowrap;
-
-		&--current {
-			pointer-events: none;
-		}
 	}
 }
