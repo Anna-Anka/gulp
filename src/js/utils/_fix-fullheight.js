@@ -1,10 +1,11 @@
-import { throttle } from './_throttle';
+import { throttle } from './_throttle.js';
 
 export const fixFullheight = () => {
     const fullScreens = document.querySelectorAll('[data-fullscreen]');
+
     if (fullScreens.length) {
         const fixHeight = () => {
-            const vh = window.innerHeight * 0.01;
+            let vh = window.innerHeight;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
         };
         const fixHeightThrottle = throttle(fixHeight);
