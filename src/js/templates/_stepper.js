@@ -1,4 +1,4 @@
-export const stepperFunction = () => {
+export const stepper = () => {
     if (document.querySelector('.stepper')) {
         const stepper = document.querySelector('.stepper');
         const stepperInput = stepper.querySelector('.stepper__input');

@@ -1,5 +1,5 @@
-import { dataMediaQueries } from '../utility/_data-media-queries';
-import { throttle } from '../utility/_throttle';
+import { dataMediaQueries } from '../utils/_data-media-queries.js';
+import { throttle } from '../utils/index.js';
 
 export const showMore = () => {
     window.addEventListener('load', () => {

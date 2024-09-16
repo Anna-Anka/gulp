@@ -150,7 +150,7 @@
 	"graph modal btn": {
 		"prefix": "g-modal-btn",
 		"body": [
-			"<button class=\"$1__button button\" data-graph-path=\"$2\" type=\"button\">$3</button>"
+			"<button class=\"$1__button button\" data-graph-path=\"$2\" aria-controls=\"$3\" type=\"button\">$4</button>"
 		]
 	},
 
@@ -158,7 +158,7 @@
 		"prefix": "g-graph-modal",
 		"body": [
 			"<div class=\"graph-modal\">",
-			"   <div class=\"graph-modal__container\" role=\"dialog\" aria-modal=\"true\" data-graph-target=\"$1\">",
+			"   <div class=\"graph-modal__container\" role=\"dialog\" aria-modal=\"true\" id=\"$1\" data-graph-target=\"$2\">",
 			"       <div class=\"graph-modal__box\">",
 			"           <button class=\"graph-modal__close js-modal-close\" aria-label=\"Закрыть модальное окно\"></button>",
 			"       </div>",

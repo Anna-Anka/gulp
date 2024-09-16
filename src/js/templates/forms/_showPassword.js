@@ -1,4 +1,4 @@
-import { throttle } from '../../utils/_throttle';
+import { throttle } from '../../utils/index.js';
 
 export function showPassword() {
     const showPasswordWrapper = (e) => {

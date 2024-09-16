@@ -69,8 +69,5 @@
 		"tippy.js": "6.3.7",
 		"webpack": "latest",
 		"webpack-stream": "latest"
-	},
-	"dependencies": {
-		"@popperjs/core": "2.11.6"
 	}
 }

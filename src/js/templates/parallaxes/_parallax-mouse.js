@@ -1,4 +1,4 @@
-export class MousePRLX {
+export class paralaxMouse {
     constructor(props, data = null) {
         const defaultConfig = {
             init: true,

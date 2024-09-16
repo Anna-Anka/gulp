@@ -1,6 +1,6 @@
-// import './includes/libs.js';
-// import './includes/utils.js';
-// import './includes/templates.js';
-// import './includes/project.js';
+import './libs/index.js';
+import './utils/index.js';
+import './templates/index.js';
+import './project/index.js';
 
 console.log('gulp')

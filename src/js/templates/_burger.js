@@ -1,5 +1,4 @@
-import { disableScroll } from '../utils/_disable-scroll.js';
-import { enableScroll } from '../utils/_enable-scroll.js';
+import { disableScroll, enableScroll } from '../utils/index.js';
 
 export const burger = () => {
     const burgerButton = document.querySelector('[data-burger-button]');
