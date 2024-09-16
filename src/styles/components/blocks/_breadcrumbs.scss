@@ -16,6 +16,8 @@
 			padding-right: 28px;
 
 			&::before {
+				@include bg-properties(contain);
+
 				content: '';
 				position: absolute;
 				right: 0;
@@ -24,15 +26,11 @@
 				height: 20px;
 				background-image: url('../img/icons/arrow.svg');
 				transform: translateY(-50%);
-
-				@include bg-properties(contain);
 			}
 		}
 
 		&:last-child {
-			.breadcrumbs__link {
-				pointer-events: none;
-			}
+			pointer-events: none;
 		}
 	}
 
