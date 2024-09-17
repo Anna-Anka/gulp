@@ -10,6 +10,8 @@
 	}
 
 	&__item {
+		white-space: nowrap;
+
 		&:not(:last-child) {
 			position: relative;
 			margin-right: 4px;
@@ -32,9 +34,5 @@
 		&:last-child {
 			pointer-events: none;
 		}
-	}
-
-	&__link {
-		white-space: nowrap;
 	}
 }
