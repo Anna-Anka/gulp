@@ -113,16 +113,16 @@
 	"spoller": {
 		"prefix": "g-spoller",
 		"body": [
-			"<ul class=\"spollers\" data-spollers=\"992,max\" data-one-spoller>",
+			"<ul class=\"spollers\" data-spollers=\"$1-spoller\" data-spollers-media=\"992,max\" data-one-spoller>",
 			"   <li class=\"spollers__item\">",
-			"       <$1 class=\"spollers__title\" data-spoller-title>",
-			"           $2",
-			"       </$1>",
+			"       <$2 class=\"spollers__title\" data-spoller-title>",
+			"           $3",
+			"       </$2>",
 			"       <button class=\"spollers__button\" type=\"button\" data-spoller-button>",
-			"           $2",
+			"           $3",
 			"       </button>",
 			"       <div class=\"spollers__body\">",
-			"           $3",
+			"           $4",
 			"       </div>",
 			"   </li>",
 			"</ul>"

@@ -4,12 +4,13 @@ import { dataMediaQueries } from '../utils/_data-media-queries.js';
 export function spollers() {
     const spollersArray = document.querySelectorAll('[data-spollers]');
     if (spollersArray.length > 0) {
-        const spollersRegular = Array.from(spollersArray).filter((item) => !item.dataset.spollers.split(',')[0]);
+        const spollersRegular = Array.from(spollersArray).filter((item) => !item.getAttribute('data-spollers-media')?.split(',')[0]);
+        console.log(spollersRegular)
         if (spollersRegular.length) {
             initSpollers(spollersRegular);
         }
 
-        const mdQueriesArray = dataMediaQueries(spollersArray, 'spollers');
+        const mdQueriesArray = dataMediaQueries(spollersArray, 'data-spollers-media');
         if (mdQueriesArray && mdQueriesArray.length) {
             mdQueriesArray.forEach((mdQueriesItem) => {
                 mdQueriesItem.matchMedia.addEventListener('change', () => {
@@ -36,13 +37,21 @@ export function spollers() {
 
         function initSpollerButton(spollersBlock, hideSpollerBody = true) {
             let spollerButtons = spollersBlock.querySelectorAll('[data-spoller-button]');
+            const spollersBlockName = spollersBlock.getAttribute('data-spollers')
             if (spollerButtons.length) {
                 spollerButtons = Array.from(spollerButtons).filter((item) => item.closest('[data-spollers]') === spollersBlock);
-                spollerButtons.forEach((spollerButton) => {
+                spollerButtons.forEach((spollerButton, index) => {
                     if (hideSpollerBody) {
                         spollerButton.removeAttribute('style');
                         if (!spollerButton.classList.contains('spollers__button--active')) {
                             spollerButton.nextElementSibling.hidden = true;
+                            spollerButton.nextElementSibling.setAttribute('role', 'region');
+                            spollerButton.nextElementSibling.setAttribute('id', `${spollersBlockName}-${index}`);
+                            spollerButton.nextElementSibling.setAttribute('aria-labelledby', `${spollersBlockName}-${index}`);
+                            spollerButton.setAttribute('aria-expanded', 'false');
+                            spollerButton.setAttribute('aria-controls', `${spollersBlockName}-${index}`);
+                        } else {
+                            spollerButton.setAttribute('aria-expanded', 'true');
                         }
                     } else {
                         spollerButton.style.display = 'none';
@@ -72,11 +81,22 @@ export function spollers() {
                 const spollerButton = el.closest('[data-spoller-button]');
                 const spollersBlock = spollerButton.closest('[data-spollers]');
                 const oneSpoller = !!spollersBlock.hasAttribute('data-one-spoller');
+
+                console.log('asaa')
+
                 if (!spollersBlock.querySelectorAll('._slide').length) {
                     if (oneSpoller && !spollerButton.classList.contains('spollers__button--active')) {
                         hideSpollersBody(spollersBlock);
                     }
+
                     spollerButton.classList.toggle('spollers__button--active');
+
+                    if (spollerButton.classList.contains('spollers__button--active')) {
+                        spollerButton.setAttribute('aria-expanded', 'true');
+                    } else {
+                        spollerButton.setAttribute('aria-expanded', 'false');
+                    }
+
                     _slideToggle(spollerButton.nextElementSibling, 500);
                 }
                 e.preventDefault();
@@ -87,6 +107,7 @@ export function spollers() {
             const spollerActiveTitle = spollersBlock.querySelector('[data-spoller-button].spollers__button--active');
             if (spollerActiveTitle) {
                 spollerActiveTitle.classList.remove('spollers__button--active');
+                spollerActiveTitle.setAttribute('aria-expanded', 'false');
                 slideUp(spollerActiveTitle.nextElementSibling, 500);
             }
         }
