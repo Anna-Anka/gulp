@@ -1,7 +1,7 @@
 import { globalVars } from './index.js';
 
 export const enableScroll = () => {
-    const fixBlocks = document.querySelectorAll('.fixed-block');
+    const fixBlocks = document.querySelectorAll('.fix-block');
     if (fixBlocks) {
         fixBlocks.forEach((el) => {
             const fixBlock = el;
