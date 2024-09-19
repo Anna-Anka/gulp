@@ -8,11 +8,13 @@ export const burger = () => {
 
     const checkClass = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
+            document.addEventListener('keydown', keyHandler);
             burgerButton.setAttribute('aria-expanded', 'true');
             burgerButton.setAttribute('aria-label', 'закрыть меню');
             burgerButton.focus();
             disableScroll();
         } else {
+            document.removeEventListener('keydown', keyHandler);
             burgerButton.setAttribute('aria-expanded', 'false');
             burgerButton.setAttribute('aria-label', 'открыть меню');
             enableScroll();
@@ -43,4 +45,31 @@ export const burger = () => {
             enableScroll();
         });
     });
+
+    const focusCatch = (e) => {
+        const nodes = menu.querySelectorAll(globalVars.focusEl);
+        const nodesArray = Array.prototype.slice.call(nodes);
+        const focusedItemIndex = nodesArray.indexOf(document.activeElement)
+        if (e.shiftKey && focusedItemIndex === 0) {
+            nodesArray[nodesArray.length - 1].focus();
+            e.preventDefault();
+        }
+        if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+            nodesArray[0].focus();
+            e.preventDefault();
+        }
+    }
+
+    const keyHandler = (event) => {
+        if (menu.classList.contains('burger-menu--active')) {
+            if (event.key === 'Escape') {
+                hideBurger();
+                checkClass();
+            }
+
+            if (event.which) {
+                focusCatch(event);
+            }
+        }
+    }
 };

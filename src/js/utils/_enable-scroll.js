@@ -1,4 +1,4 @@
-import vars from '../_vars.js';
+import { globalVars } from './index.js';
 
 export const enableScroll = () => {
     const fixBlocks = document.querySelectorAll('.fixed-block');
@@ -8,14 +8,14 @@ export const enableScroll = () => {
             fixBlock.style.paddingRight = '0';
         });
     }
-    const pagePosition = parseInt(vars.bodyEl.dataset.position, 10);
-    vars.bodyEl.style.paddingRight = '0';
+    const pagePosition = parseInt(globalVars.bodyEl.dataset.position, 10);
+    globalVars.bodyEl.style.paddingRight = '0';
 
-    vars.bodyEl.style.top = 'auto';
-    vars.bodyEl.classList.remove('disable-scroll');
+    globalVars.bodyEl.style.top = 'auto';
+    globalVars.bodyEl.classList.remove('disable-scroll');
     window.scroll({
         top: pagePosition,
         left: 0,
     });
-    vars.bodyEl.removeAttribute('data-position');
+    globalVars.bodyEl.removeAttribute('data-position');
 };
