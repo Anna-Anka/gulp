@@ -56,10 +56,14 @@ export const paths = {
     images: {
         src: `${devFolder}/img`,
         app: `${productFolder}/img`,
-        watch: `${devFolder}/img/`,
-        srcExceptions: [`!${devFolder}/img/sprites/**/*`]
+        watch: `${devFolder}/img/`
+    },
+    favicons: {
+        srcFiles: `${devFolder}/img/favicons/**/*`,
+        app: `${productFolder}/img/favicons/`,
     },
     sprites: {
+        srcFiles: `${devFolder}/img/sprites/**/*`,
         src: `${devFolder}/img/sprites/*.svg`,
         app: `${productFolder}/img/sprites/`,
         watch: `${devFolder}/img/sprites/*.svg`,
