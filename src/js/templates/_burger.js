@@ -10,6 +10,7 @@ export const burger = () => {
         if (burgerButton.classList.contains('burger-button--active')) {
             burgerButton.setAttribute('aria-expanded', 'true');
             burgerButton.setAttribute('aria-label', 'закрыть меню');
+            burgerButton.focus();
             disableScroll();
         } else {
             burgerButton.setAttribute('aria-expanded', 'false');
