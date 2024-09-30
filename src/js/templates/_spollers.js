@@ -5,7 +5,6 @@ export function spollers() {
     const spollersArray = document.querySelectorAll('[data-spollers]');
     if (spollersArray.length > 0) {
         const spollersRegular = Array.from(spollersArray).filter((item) => !item.getAttribute('data-spollers-media')?.split(',')[0]);
-        console.log(spollersRegular)
         if (spollersRegular.length) {
             initSpollers(spollersRegular);
         }
@@ -82,7 +81,6 @@ export function spollers() {
                 const spollersBlock = spollerButton.closest('[data-spollers]');
                 const oneSpoller = !!spollersBlock.hasAttribute('data-one-spoller');
 
-                console.log('asaa')
 
                 if (!spollersBlock.querySelectorAll('._slide').length) {
                     if (oneSpoller && !spollerButton.classList.contains('spollers__button--active')) {
