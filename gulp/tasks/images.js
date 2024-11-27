@@ -1,8 +1,8 @@
 export const imagesTask = (done) => {
     const { plugins, production, paths } = global.app
 
-    const result = plugins.gulp.src([`${paths.images.src}/**/**.{jpg,jpeg,png,svg}`, `!${paths.sprites.srcFiles}`], { encoding: false })
-        .pipe(plugins.gulpif(!production, plugins.newer(paths.images.app)))
+    return plugins.gulp.src([`${paths.images.src}/**/**.{jpg,jpeg,png,svg}`, ...paths.images.srcExceptions], { encoding: false })
+        .pipe(plugins.newer(paths.images.app))
         .pipe(plugins.gulpif(production, plugins.imagemin([
             plugins.imageminGiflossy({
                 optimizationLevel: 3,
@@ -11,7 +11,7 @@ export const imagesTask = (done) => {
             }),
             plugins.imageminPngquant({
                 speed: 5,
-                quality: '70-90',
+                quality: [0.6, 0.8],
             }),
             plugins.imageminZopfli({
                 more: true,
@@ -22,15 +22,39 @@ export const imagesTask = (done) => {
             }),
             plugins.svgo({
                 plugins: [
-                    { removeViewBox: false },
-                    { removeUnusedNS: false },
-                    { removeUselessStrokeAndFill: false },
-                    { cleanupIDs: false },
-                    { removeComments: true },
-                    { removeEmptyAttrs: true },
-                    { removeEmptyText: true },
-                    { collapseGroups: true },
-                ],
+                    {
+                        name: 'removeViewBox',
+                        active: false
+                    },
+                    {
+                        name: 'removeUnusedNS',
+                        active: false
+                    },
+                    {
+                        name: 'removeUselessStrokeAndFill',
+                        active: false
+                    },
+                    {
+                        name: 'cleanupIDs',
+                        active: false
+                    },
+                    {
+                        name: 'removeComments',
+                        active: true
+                    },
+                    {
+                        name: 'removeEmptyAttrs',
+                        active: true
+                    },
+                    {
+                        name: 'removeEmptyText',
+                        active: true
+                    },
+                    {
+                        name: 'collapseGroups',
+                        active: true
+                    },
+                ]
             }),
         ])))
         .pipe(plugins.gulp.dest(`${paths.images.app}/`))
@@ -38,6 +62,8 @@ export const imagesTask = (done) => {
             title: 'Images',
         }))
         .pipe(plugins.browsersync.stream())
-        done()
-    return result;
+        .on('end', () => {
+            plugins.browsersync.reload();
+            done();
+        });
 };

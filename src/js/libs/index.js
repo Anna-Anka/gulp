@@ -10,3 +10,4 @@
 // import './_tabs.js';
 // import './_tippy.js';
 // import './_tippy.js';
+// import 'pdfjs-viewer-element';

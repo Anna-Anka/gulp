@@ -5,7 +5,7 @@ export const stylesTask = async () => {
     if (production) {
         await plugins.deleteAsync([paths.styles.app]);
     }
-    
+
     return plugins.gulp.src(paths.styles.src)
         .pipe(plugins.gulpif(!production, plugins.sourcemaps.init()))
         .pipe(plugins.plumber(

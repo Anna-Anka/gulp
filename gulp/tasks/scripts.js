@@ -1,9 +1,7 @@
 import webpackConfig from '../../webpack.config.js';
 
-
 export const scriptsTask = () => {
     const { plugins, production, paths } = global.app
-    // todo: это надо?
     webpackConfig.mode = production ? 'production' : 'development';
     webpackConfig.devtool = production ? false : 'source-map';
 
