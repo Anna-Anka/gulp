@@ -1,32 +1,64 @@
-// import JustValidate from "just-validate";
+import JustValidate from "just-validate";
 
-// Если несколько форм
-// const forms = document.querySelectorAll('.form')
-// forms.forEach((form) => {
-//     const formValidation = new JustValidate(form)
+(function () {
+    const forms = document.querySelectorAll("[data-form-validate]")
 
-//     formValidation.addField('input[type="email"]', [
-//         {
-//             rule: 'required',
-//             errorMessage: 'Поле должно быть заполнено',
-//         },
-//         {
-//             rule: 'email',
-//             errorMessage: 'Введите корректный email',
-//         },
-//     ]);
-// })
+    if (forms) {
+        forms.forEach(form => {
+            const buttonSubmit = form.querySelector('.form__button');
 
-// Если одна форма
-// const validation = new JustValidate('.test');
+            const validation = new JustValidate(form, {
+                validateBeforeSubmitting: true,
+                errorFieldCssClass: 'form__field--error',
+            });
 
-// validation.addField('input[type="email"]', [
-//     {
-//         rule: 'required',
-//         errorMessage: 'Поле должно быть заполнено',
-//     },
-//     {
-//         rule: 'email',
-//         errorMessage: 'Введите корректный email',
-//     },
-// ]);
+            if (form.querySelector('input[type="email"]')) {
+                const allEmailFields = form.querySelectorAll('input[type="email"]')
+
+                allEmailFields.forEach((item) => {
+                    const errorElement = item.nextElementSibling
+
+                    validation.addField(item, [
+                        {
+                            rule: 'email',
+                            errorMessage: 'Введите корректный email',
+                        },
+                        {
+                            rule: 'required',
+                            errorMessage: 'Поле обязательно для заполнения',
+                        },
+                    ], {
+                        errorsContainer: errorElement,
+                    });
+                })
+            }
+
+            validation.onValidate(({
+                isValid,
+                isSubmitted,
+                fields,
+            }) => {
+
+
+                if (buttonSubmit) {
+                    if (isValid) {
+                        buttonSubmit.removeAttribute('disabled');
+                    } else {
+                        buttonSubmit.setAttribute('disabled', 'true');
+                    }
+                }
+
+                for (let key in fields) {
+                    const element = fields[key].elem
+                    if (fields[key].isValid) {
+                        element.removeAttribute('aria-invalid');
+                    } else {
+                        if (!element.hasAttribute('aria-invalid')) {
+                            element.setAttribute('aria-invalid', 'true');
+                        }
+                    }
+                }
+            });
+        });
+    }
+})
