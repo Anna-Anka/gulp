@@ -1,7 +1,7 @@
 import { dataMediaQueries } from '../utils/_data-media-queries.js';
 import { throttle } from '../utils/index.js';
 
-export const showMore = () => {
+(function() {
     window.addEventListener('load', () => {
         if (document.querySelector('[data-showmore]')) {
             const allShowMore = document.querySelectorAll('[data-showmore]');
@@ -17,7 +17,7 @@ export const showMore = () => {
                     mdQueriesArray && mdQueriesArray.length ? initItemsMedia(mdQueriesArray) : null;
                 }
             }
-            
+
             const showMoreResizeThrottle = throttle(showMoreResize);
 
             function showMoreAction(e) {
@@ -145,4 +145,4 @@ export const showMore = () => {
             }
         }
     });
-};
+})

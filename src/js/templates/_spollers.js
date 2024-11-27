@@ -1,7 +1,7 @@
 import { slideUp, _slideDown, _slideToggle } from '../utils/_animation.js';
 import { dataMediaQueries } from '../utils/_data-media-queries.js';
 
-export function spollers() {
+(function() {
     const spollersArray = document.querySelectorAll('[data-spollers]');
     if (spollersArray.length > 0) {
         const spollersRegular = Array.from(spollersArray).filter((item) => !item.getAttribute('data-spollers-media')?.split(',')[0]);
@@ -110,4 +110,4 @@ export function spollers() {
             }
         }
     }
-}
+})

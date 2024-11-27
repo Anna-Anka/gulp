@@ -1,4 +1,4 @@
-export const activeClass = () => {
+(function() {
     window.addEventListener('scroll', () => {
         const scrollDistance = window.scrollY;
 
@@ -16,4 +16,4 @@ export const activeClass = () => {
             });
         }
     });
-};
+})

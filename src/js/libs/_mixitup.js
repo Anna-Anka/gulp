@@ -1,2 +1,11 @@
 // import mixitup from 'mixitup';
-// let mixer = mixitup('.sort-content');
+
+// (function() {
+//     const wrappers = document.querySelectorAll('.')
+
+//     if (wrappers) {
+//         wrappers.forEach((wrapper) => {
+//             mixitup(wrapper);
+//         })
+//     }
+// })

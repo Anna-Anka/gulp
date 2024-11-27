@@ -1,5 +1,13 @@
 // import tippy from 'tippy.js';
 
-// tippy('[data-tippy-content]', {
-//     animation: 'scale',
-// });
+// (function () {
+//     const wrappers = document.querySelector('[data-tippy-content]')
+
+//     if (wrappers) {
+//         wrappers.forEach(wrapper => {
+//             tippy(wrapper, {
+//                 animation: 'scale',
+//             });
+//         });
+//     }
+// })

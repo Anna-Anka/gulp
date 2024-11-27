@@ -1,6 +1,6 @@
 import { throttle } from '../../utils/index.js';
 
-export function showPassword() {
+(function () {
     const showPasswordWrapper = (e) => {
         const targetElement = e.target;
         if (targetElement.closest('[data-show-password]')) {
@@ -12,4 +12,4 @@ export function showPassword() {
 
     const showPasswordTrottle = throttle(showPasswordWrapper);
     document.addEventListener('click', showPasswordTrottle);
-}
+})

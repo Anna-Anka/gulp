@@ -4,7 +4,7 @@ import { throttle } from '../utils/index.js';
     const items = document.querySelectorAll('[data-numbers]');
     const isDoneItems = Array.from(items).map(() => false);
 
-    if (items.length) {
+    if (items && items.length) {
         const animateNumber = (item, startValue, endValue, step, time) => {
             const iterationTime = Math.round(time / ((endValue - startValue) / step));
 

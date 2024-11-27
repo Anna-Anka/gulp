@@ -1,6 +1,12 @@
 // import Isotope from "isotope-layout";
-// const parentElement = document.querySelector('.');
-// new Isotope(parentElement, {
-//     itemSelector: '.',
-//     layoutMode: 'masonry'
-// });
+
+// (function () {
+//     const parentElement = document.querySelector('.');
+
+//     if (parentElement) {
+//         new Isotope(parentElement, {
+//             itemSelector: '.',
+//             layoutMode: 'masonry'
+//         });
+//     }
+// })

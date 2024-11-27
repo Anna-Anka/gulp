@@ -1,50 +1,43 @@
 // * stepper
-// import { stepperFunction } from "./functions/stepper";
-// stepperFunction()
+// import './_stepper.js';
 
 // * spollers
-// import { spollers } from "./templates/_spollers";
-// spollers()
+// import './_spollers.js';
 
 // * show-more
-// import { showMore } from './templates/_show-more';
-// showMore()
+// import './_show-more.js';
 
 // * burger
-// import { burger } from './templates/burger';
-// burger();
+// import './_burger.js';
 
 // * marquee (бегущая строка)
-// import { handleMarquee } from "./templates/marquee";
-// handleMarquee();
+// import './_marquee.js';
 
 // * header sticky (липкая шапка)
-// import { headerSticky } from "./templates/header-sticky";
-// headerSticky();
+// import './_sticky-header.js';
 
 // * type (печатающийся текст)
-//import { type } from './templates/type';
-// type();
+// import './_type.js';
 
 // * parallax-mouse
 // import {MousePRLX} from './templates/parallaxes/_parallax-mouse.js'
-// const paralax = new MousePRLX({init: true, logging: true})
+// const paralax = new paralaxMouse({init: true, logging: true})
 // paralax.paralaxMouseInit(document.querySelectorAll('[data-prlx-mouse]'));
 
 // * parallax-scroll
-// import { parallaxScroll } from './templates/parallaxes/_parallax-scroll.js';
-// parallaxScroll()
+// import './parallaxes/_parallax-scroll.js';
 
 // * show password
-// import { showPassword } from './templates/forms/_showPassword';
-// showPassword();
+// import './forms/_showPassword.js';
 
 // * rating
-// import from './templates/forms/_rating';
+// import './_rating.js';
 
 // * time count
-// import from './templates/forms/_time-count';
+// import './_time-count.js';
 
 // * active class
-// import {activeClass} from './templates/forms/_active-class';
-// activeClass();
+// import './_active-class.js';
+
+// * counter
+// import './_counter.js';

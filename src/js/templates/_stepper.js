@@ -1,4 +1,4 @@
-export const stepper = () => {
+(function() {
     if (document.querySelector('.stepper')) {
         const stepper = document.querySelector('.stepper');
         const stepperInput = stepper.querySelector('.stepper__input');
@@ -80,4 +80,4 @@ export const stepper = () => {
             stepperInputWidth();
         });
     }
-};
+})

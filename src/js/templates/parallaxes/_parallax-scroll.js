@@ -1,4 +1,4 @@
-export const parallaxScroll = () => {
+(function() {
     const parallax = document.querySelector('.parallax');
     const content = document.querySelector('.parallax__container');
     const mountains = document.querySelector('.images-parallax__mountains');
@@ -23,4 +23,4 @@ export const parallaxScroll = () => {
     });
 
     observer.observe(document.querySelector('.content'));
-};
+})

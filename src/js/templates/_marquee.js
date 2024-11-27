@@ -1,4 +1,4 @@
-export const handleMarquee = () => {
+(function() {
     if (document.querySelector('.marquee')) {
         const marquee = document.querySelectorAll('.marquee');
         const speed = 2;
@@ -21,4 +21,4 @@ export const handleMarquee = () => {
             loop();
         });
     }
-};
+})
