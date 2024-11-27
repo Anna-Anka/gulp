@@ -1,6 +1,6 @@
 import { disableScroll, enableScroll } from '../utils/index.js';
 
-export const burger = () => {
+(function() {
     const burgerButton = document.querySelector('[data-burger-button]');
     const menu = document.querySelector('[data-menu]');
     const menuLinks = document.querySelectorAll('[data-menu-link]');
@@ -72,4 +72,4 @@ export const burger = () => {
             }
         }
     }
-};
+})
