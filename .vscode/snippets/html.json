@@ -3,7 +3,7 @@
 		"scope": "html",
 		"prefix": "g-burger-button",
 		"body": [
-			"<button class=\"burger-button\" aria-controls=\"header-burger-menu\" aria-label=\"Открыть меню\" aria-expanded=\"false\" aria-controls=\"header-burger-menu\" data-burger-button>",
+			"<button class=\"burger-button\" aria-controls=\"header-burger-menu\" aria-label=\"Открыть меню\" aria-expanded=\"false\" data-burger-button>",
 			"   <span class=\"burger-button__line\" aria-hidden></span>",
 			"</button>"
 		]
