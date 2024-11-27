@@ -2,6 +2,7 @@
 // import './_rating.js';
 // import './_counter.js';
 // import './_burger.js';
+// import './_sticky-header.js';
 // import { showPassword } from './forms/_showPassword.js';
 // import { paralaxMouse } from './parallaxes/_parallax-mouse.js';
 // import { parallaxScroll } from './parallaxes/_parallax-scroll.js';
