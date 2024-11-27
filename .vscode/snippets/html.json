@@ -110,6 +110,16 @@
 		]
 	},
 
+	"counter": {
+		"prefix": "g-counter",
+		"body": [
+			"<div>",
+			"   <span data-start-value=\"0\" data-step=\"3\" data-end-value=\"520\" data-time=\"1000\" data-numbers></span>",
+			"   <span></span>",
+			"</div>"
+		]
+	},
+
 	"spoller": {
 		"prefix": "g-spoller",
 		"body": [
