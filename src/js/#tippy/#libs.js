@@ -17,7 +17,7 @@
 // import './_elipsis.js';
 
 // * inputmask
-// import './_inputmask.js';
+// import './_input-mask.js';
 
 // * isotope
 // import './_isotope.js';
