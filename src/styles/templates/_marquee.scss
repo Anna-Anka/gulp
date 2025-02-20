@@ -1,20 +1,11 @@
 .marquee {
 	padding: 20px 0;
+	overflow: hidden;
+	white-space: nowrap;
 	background-color: var(--color-white);
 
-	&__wrapper {
-		position: relative;
+	&__content {
 		display: flex;
-		width: 100%;
-	}
-
-	&__items {
-		display: flex;
-	}
-
-	&__item {
-		flex-shrink: 0;
-		padding: 0 80px;
-		white-space: nowrap;
+		gap: 6px;
 	}
 }

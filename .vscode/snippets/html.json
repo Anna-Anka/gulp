@@ -175,6 +175,19 @@
 		]
 	},
 
+	"marquee": {
+		"prefix": "g-marquee",
+		"body": [
+			"<div class=\"marquee\">",
+			"   <div class=\"marquee__content\" data-marquee-direction=\"right\" data-marquee>",
+			"       <p>",
+			"           $1",
+			"       </p>",
+			"   </div>",
+			"</div>"
+		]
+	},
+
 	"graph modal btn": {
 		"prefix": "g-modal-btn",
 		"body": [
@@ -225,19 +238,6 @@
 			"       <img class=\"$4__img\" src=\"img/$2.$3\" alt=\"$5\" width=\"$6\" height=\"$7\" loading=\"lazy\">",
 			"   </picture>",
 			"</a>"
-		]
-	},
-
-	"marquee": {
-		"prefix": "g-marquee",
-		"body": [
-			"<div class=\"marquee\">",
-			"    <div class=\"marquee__wrapper\">",
-			"        <ul class=\"marquee__items\">",
-			"            <li class=\"marquee__item\">$1</li>",
-			"        </ul>",
-			"    </div>",
-			"</div>"
 		]
 	},
 

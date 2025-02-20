@@ -1,24 +1,27 @@
-(function() {
-    if (document.querySelector('.marquee')) {
-        const marquee = document.querySelectorAll('.marquee');
-        const speed = 2;
-        marquee.forEach((el) => {
-            const container = el.querySelector('.marquee__wrapper');
-            const content = el.querySelector('.marquee__wrapper > *');
-            const elWidth = content.offsetWidth;
-            const clone = content.cloneNode(true);
-            container.appendChild(clone);
-            let progress = 8;
-            function loop() {
-                progress -= speed;
-                if (progress <= elWidth * -1) {
-                    progress = 0;
-                }
-                container.style.transform = `translateX(${progress}px)`;
-                container.style.transform += `skewX(${speed * 0}deg)`;
-                window.requestAnimationFrame(loop);
-            }
-            loop();
-        });
+function marquee(selector, speed) {
+    const parentSelectors = document.querySelectorAll(selector);
+
+    if (!parentSelectors) {
+        return null
     }
-})
+
+    parentSelectors.forEach((parentSelector) => {
+        const direction = parentSelector.getAttribute('data-marquee-direction')
+
+        const clone = parentSelector.innerHTML;
+        let i = 0;
+        parentSelector.insertAdjacentHTML(direction === 'right' ? 'afterBegin' : 'beforeend', clone);
+        parentSelector.insertAdjacentHTML(direction === 'right' ? 'afterBegin' : 'beforeend', clone);
+        const firstElement = parentSelector.children[0];
+
+        setInterval(function () {
+            firstElement.style.marginLeft = direction === 'right' ? `${i}px` : `-${i}px`;
+            if (i > firstElement.clientWidth) {
+                i = 0;
+            }
+            i = i + speed;
+        }, 0);
+    })
+}
+
+window.addEventListener('load', marquee('[data-marquee]', 0.2))
