@@ -1,6 +1,5 @@
-import Swiper, {
-    Pagination, Navigation, Scrollbar, Autoplay,
-} from 'swiper';
+import Swiper from 'swiper';
+import { Pagination, Navigation, Scrollbar, Autoplay } from 'swiper/modules';
 
 Swiper.use([Pagination, Navigation, Scrollbar, Autoplay]);
 

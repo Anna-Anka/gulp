@@ -1,4 +1,5 @@
-import Swiper, { Navigation, Thumbs } from 'swiper';
+import Swiper from 'swiper';
+import { Navigation, Thumbs } from 'swiper/modules';
 
 Swiper.use([Navigation, Thumbs]);
 
