@@ -188,6 +188,14 @@
 		]
 	},
 
+	"show-text-animation": {
+		"prefix": "g-show-text-animation",
+		"body": [
+			"   <div class=\"animation-text\" data-show-text=\"$1\" aria-label=\"$2\">",
+			"   </div>"
+		]
+	},
+
 	"graph modal btn": {
 		"prefix": "g-modal-btn",
 		"body": [

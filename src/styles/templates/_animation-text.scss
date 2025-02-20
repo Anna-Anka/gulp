@@ -1,0 +1,17 @@
+.animation-text {
+	&--active {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	span {
+		opacity: 0;
+		animation: fade 400ms ease-in-out forwards;
+	}
+
+	p {
+		&:not(:last-child) {
+			margin-bottom: 12px;
+		}
+	}
+}
