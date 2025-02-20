@@ -168,6 +168,13 @@
 		]
 	},
 
+	"btn back": {
+		"prefix": "g-back-btn",
+		"body": [
+			"<button class=\"$1__button button\" type=\"button\" data-button-back>$2</button>"
+		]
+	},
+
 	"graph modal btn": {
 		"prefix": "g-modal-btn",
 		"body": [
