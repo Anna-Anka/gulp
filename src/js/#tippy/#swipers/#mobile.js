@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import { Navigation } from 'swiper/modules';
+import { A11y, Navigation } from 'swiper/modulesA11y, ';
 
-Swiper.use([Navigation]);
+Swiper.use([A11y, Navigation]);
 
 if (document.querySelector('.__swiper')) {
     const slider = document.querySelector('.__swiper');

@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
-import { Pagination, Navigation, Scrollbar, Autoplay } from 'swiper/modules';
+import { A11y, Pagination, Navigation, Scrollbar, Autoplay } from 'swiper/modules';
 
-Swiper.use([Pagination, Navigation, Scrollbar, Autoplay]);
+Swiper.use([A11y, Pagination, Navigation, Scrollbar, Autoplay]);
 
 if (document.querySelector('.__swiper')) {
     new Swiper('.__swiper', {
