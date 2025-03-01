@@ -50,3 +50,6 @@
 
 // * marquee
 // import './_marquee.js
+
+// * show text in cards of reviews by button click
+// import './_show-reviews-text.js
